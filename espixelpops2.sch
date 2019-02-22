@@ -1,4 +1,410 @@
-EESchema Schematic File Version 2
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 26 0
 EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "ES Pixel Pops 2"
+Date "2019-02-22"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x06 J1
+U 1 1 5C70257E
+P 2450 3250
+F 0 "J1" H 2370 3667 50  0000 C CNN
+F 1 "Conn_01x06" H 2370 3576 50  0000 C CNN
+F 2 "" H 2450 3250 50  0001 C CNN
+F 3 "~" H 2450 3250 50  0001 C CNN
+	1    2450 3250
+	-1   0    0    -1  
+$EndComp
+Text Notes 2200 3050 0    50   ~ 0
+GND
+Text Notes 2200 3150 0    50   ~ 0
+CTS
+Text Notes 2200 3250 0    50   ~ 0
+VCC
+Text Notes 2200 3350 0    50   ~ 0
+TXO
+Text Notes 2200 3450 0    50   ~ 0
+RXI
+Text Notes 2200 3550 0    50   ~ 0
+DTR
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J2
+U 1 1 5C7028C9
+P 4600 3150
+F 0 "J2" H 4650 3467 50  0000 C CNN
+F 1 "Conn_02x04_Odd_Even" H 4650 3376 50  0000 C CNN
+F 2 "" H 4600 3150 50  0001 C CNN
+F 3 "~" H 4600 3150 50  0001 C CNN
+	1    4600 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5C702A06
+P 2750 3600
+F 0 "#PWR0101" H 2750 3350 50  0001 C CNN
+F 1 "GND" H 2755 3427 50  0000 C CNN
+F 2 "" H 2750 3600 50  0001 C CNN
+F 3 "" H 2750 3600 50  0001 C CNN
+	1    2750 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3050 2750 3050
+Wire Wire Line
+	2750 3050 2750 3600
+$Comp
+L Regulator_Linear:LM317_3PinPackage U1
+U 1 1 5C702C7C
+P 2800 1900
+F 0 "U1" H 2800 2142 50  0000 C CNN
+F 1 "LM317_3PinPackage" H 2800 2051 50  0000 C CNN
+F 2 "" H 2800 2150 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm317.pdf" H 2800 1900 50  0001 C CNN
+	1    2800 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3250 3100 3250
+Text Label 2950 3250 0    50   ~ 0
+VIN
+Wire Wire Line
+	1950 1900 2250 1900
+Text Label 2000 1900 0    50   ~ 0
+VIN
+$Comp
+L power:GND #PWR0102
+U 1 1 5C702F5E
+P 2800 2400
+F 0 "#PWR0102" H 2800 2150 50  0001 C CNN
+F 1 "GND" H 2805 2227 50  0000 C CNN
+F 2 "" H 2800 2400 50  0001 C CNN
+F 3 "" H 2800 2400 50  0001 C CNN
+	1    2800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0103
+U 1 1 5C7030F5
+P 3300 1800
+F 0 "#PWR0103" H 3300 1650 50  0001 C CNN
+F 1 "+3.3V" H 3315 1973 50  0000 C CNN
+F 2 "" H 3300 1800 50  0001 C CNN
+F 3 "" H 3300 1800 50  0001 C CNN
+	1    3300 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 1900 3300 1900
+Wire Wire Line
+	3300 1900 3300 1800
+$Comp
+L Device:C C1
+U 1 1 5C7031EE
+P 2250 2100
+F 0 "C1" H 2365 2146 50  0000 L CNN
+F 1 "0.1uF" H 2365 2055 50  0000 L CNN
+F 2 "" H 2288 1950 50  0001 C CNN
+F 3 "~" H 2250 2100 50  0001 C CNN
+	1    2250 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 1900 2250 1950
+Connection ~ 2250 1900
+Wire Wire Line
+	2250 1900 2500 1900
+Wire Wire Line
+	2250 2350 2800 2350
+Connection ~ 2800 2350
+Wire Wire Line
+	2800 2350 2800 2400
+$Comp
+L Device:CP C2
+U 1 1 5C703312
+P 3300 2100
+F 0 "C2" H 3418 2146 50  0000 L CNN
+F 1 "200uF" H 3418 2055 50  0000 L CNN
+F 2 "" H 3338 1950 50  0001 C CNN
+F 3 "~" H 3300 2100 50  0001 C CNN
+	1    3300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 1900 3300 1950
+Connection ~ 3300 1900
+Wire Wire Line
+	2250 2250 2250 2350
+Wire Wire Line
+	2800 2200 2800 2250
+Wire Wire Line
+	2800 2250 3300 2250
+Connection ~ 2800 2250
+Wire Wire Line
+	2800 2250 2800 2350
+Wire Wire Line
+	2650 3450 3500 3450
+Wire Wire Line
+	3500 3450 3500 3050
+Wire Wire Line
+	3500 3050 4400 3050
+$Comp
+L power:+3.3V #PWR0104
+U 1 1 5C703BBD
+P 3950 2900
+F 0 "#PWR0104" H 3950 2750 50  0001 C CNN
+F 1 "+3.3V" H 3965 3073 50  0000 C CNN
+F 2 "" H 3950 2900 50  0001 C CNN
+F 3 "" H 3950 2900 50  0001 C CNN
+	1    3950 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2900 3950 3150
+Wire Wire Line
+	3950 3350 4400 3350
+Wire Wire Line
+	4400 3150 3950 3150
+Connection ~ 3950 3150
+Wire Wire Line
+	3950 3150 3950 3350
+Wire Wire Line
+	4400 3250 4000 3250
+Text Label 4200 3250 0    50   ~ 0
+reset
+Text Label 4200 3050 0    50   ~ 0
+TX
+Text Label 4200 3150 0    50   ~ 0
+EN
+Text Label 4200 3350 0    50   ~ 0
+vcc
+$Comp
+L power:GND #PWR0105
+U 1 1 5C704197
+P 5000 3400
+F 0 "#PWR0105" H 5000 3150 50  0001 C CNN
+F 1 "GND" H 5005 3227 50  0000 C CNN
+F 2 "" H 5000 3400 50  0001 C CNN
+F 3 "" H 5000 3400 50  0001 C CNN
+	1    5000 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3050 5000 3050
+Wire Wire Line
+	5000 3050 5000 3400
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5C70444A
+P 5750 2450
+F 0 "SW1" H 5750 2735 50  0000 C CNN
+F 1 "SW_Push" H 5750 2644 50  0000 C CNN
+F 2 "" H 5750 2650 50  0001 C CNN
+F 3 "" H 5750 2650 50  0001 C CNN
+	1    5750 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3250 5450 3250
+Wire Wire Line
+	5450 3250 5450 2450
+Wire Wire Line
+	5450 2450 5550 2450
+$Comp
+L power:GND #PWR0106
+U 1 1 5C7047A9
+P 6000 2500
+F 0 "#PWR0106" H 6000 2250 50  0001 C CNN
+F 1 "GND" H 6005 2327 50  0000 C CNN
+F 2 "" H 6000 2500 50  0001 C CNN
+F 3 "" H 6000 2500 50  0001 C CNN
+	1    6000 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 2450 6000 2450
+Wire Wire Line
+	6000 2450 6000 2500
+$Comp
+L Regulator_Linear:L78L05_TO92 U2
+U 1 1 5C704B35
+P 6850 3200
+F 0 "U2" H 6850 3442 50  0000 C CNN
+F 1 "L78L05_TO92" H 6850 3351 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6850 3425 50  0001 C CIN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf" H 6850 3150 50  0001 C CNN
+	1    6850 3200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:2N7000 Q1
+U 1 1 5C704DE9
+P 6000 3700
+F 0 "Q1" V 6250 3700 50  0000 C CNN
+F 1 "2N7000" V 6341 3700 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6200 3625 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 6000 3700 50  0001 L CNN
+	1    6000 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0107
+U 1 1 5C704EF6
+P 6000 3300
+F 0 "#PWR0107" H 6000 3150 50  0001 C CNN
+F 1 "+3.3V" H 6015 3473 50  0000 C CNN
+F 2 "" H 6000 3300 50  0001 C CNN
+F 3 "" H 6000 3300 50  0001 C CNN
+	1    6000 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 3300 6000 3350
+$Comp
+L Device:R_US R1
+U 1 1 5C705264
+P 5650 3550
+F 0 "R1" H 5718 3596 50  0000 L CNN
+F 1 "300" H 5718 3505 50  0000 L CNN
+F 2 "" V 5690 3540 50  0001 C CNN
+F 3 "~" H 5650 3550 50  0001 C CNN
+	1    5650 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3400 5650 3350
+Wire Wire Line
+	5650 3350 6000 3350
+Connection ~ 6000 3350
+Wire Wire Line
+	6000 3350 6000 3500
+Wire Wire Line
+	4900 3150 5350 3150
+Wire Wire Line
+	5350 3150 5350 3800
+Wire Wire Line
+	5350 3800 5650 3800
+Wire Wire Line
+	5650 3700 5650 3800
+Connection ~ 5650 3800
+Wire Wire Line
+	5650 3800 5800 3800
+Text Label 5050 3150 0    50   ~ 0
+io2
+Text Label 5050 3250 0    50   ~ 0
+io0
+Wire Wire Line
+	4900 3350 4900 3750
+$Comp
+L Diode:1N4148 D1
+U 1 1 5C70690D
+P 4250 3750
+F 0 "D1" H 4250 3966 50  0000 C CNN
+F 1 "1N4148" H 4250 3875 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4250 3575 50  0001 C CNN
+F 3 "http://www.nxp.com/documents/data_sheet/1N4148_1N4448.pdf" H 4250 3750 50  0001 C CNN
+	1    4250 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 3750 4900 3750
+Wire Wire Line
+	4100 3750 3200 3750
+Wire Wire Line
+	3200 3750 3200 3350
+Wire Wire Line
+	3200 3350 2650 3350
+Text Label 4700 3750 0    50   ~ 0
+RX
+$Comp
+L Device:R_US R2
+U 1 1 5C707DAD
+P 6350 3550
+F 0 "R2" H 6418 3596 50  0000 L CNN
+F 1 "300" H 6418 3505 50  0000 L CNN
+F 2 "" V 6390 3540 50  0001 C CNN
+F 3 "~" H 6350 3550 50  0001 C CNN
+	1    6350 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5C707E1A
+P 6850 3550
+F 0 "#PWR0108" H 6850 3300 50  0001 C CNN
+F 1 "GND" H 6855 3377 50  0000 C CNN
+F 2 "" H 6850 3550 50  0001 C CNN
+F 3 "" H 6850 3550 50  0001 C CNN
+	1    6850 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3500 6850 3550
+Wire Wire Line
+	6550 3200 6350 3200
+Wire Wire Line
+	6350 3200 6350 3400
+$Comp
+L Connector_Generic:Conn_01x05 J3
+U 1 1 5C708DEC
+P 7900 4100
+F 0 "J3" H 7819 3675 50  0000 C CNN
+F 1 "Conn_01x05" H 7819 3766 50  0000 C CNN
+F 2 "" H 7900 4100 50  0001 C CNN
+F 3 "~" H 7900 4100 50  0001 C CNN
+	1    7900 4100
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7450 3900 7700 3900
+Text Label 7450 3900 0    50   ~ 0
+VIN
+Wire Wire Line
+	7150 3200 7450 3200
+Text Label 7200 3200 0    50   ~ 0
+VIN
+Wire Wire Line
+	6200 3800 6350 3800
+Wire Wire Line
+	6600 3800 6600 4000
+Wire Wire Line
+	6600 4000 7700 4000
+Wire Wire Line
+	6350 3700 6350 3800
+Connection ~ 6350 3800
+Wire Wire Line
+	6350 3800 6600 3800
+Wire Wire Line
+	7700 4300 7450 4300
+Text Label 7450 4300 0    50   ~ 0
+VIN
+Wire Wire Line
+	7700 4100 7650 4100
+Wire Wire Line
+	7650 4100 7650 4200
+Wire Wire Line
+	7650 4200 7700 4200
+Connection ~ 7650 4200
+Wire Wire Line
+	7650 4200 7650 4400
+$Comp
+L power:GND #PWR0109
+U 1 1 5C70E28D
+P 7650 4400
+F 0 "#PWR0109" H 7650 4150 50  0001 C CNN
+F 1 "GND" H 7655 4227 50  0000 C CNN
+F 2 "" H 7650 4400 50  0001 C CNN
+F 3 "" H 7650 4400 50  0001 C CNN
+	1    7650 4400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
